@@ -1,10 +1,10 @@
 {
     "1": {"level": 1, "title": "Đề 101"},
-    "60": {"level": 2, "title": "Giải Đề 101"},
-    "2": {"level": 1, "title": "Đề 102"},
-    "61": {"level": 2, "title": "Giải Đề 102"},
-    "3": {"level": 1, "title": "Đề 103"},
-    "62": {"level": 2, "title": "Giải Đề 103"},
-    "4": {"level": 1, "title": "Đề 104"},
-    "63": {"level": 2, "title": "Giải Đề 104"}
+    "7": {"level": 2, "title": "Giải Đề 101"},
+    "26": {"level": 1, "title": "Đề 102"},
+    "32": {"level": 2, "title": "Giải Đề 102"},
+    "50": {"level": 1, "title": "Đề 103"},
+    "56": {"level": 2, "title": "Giải Đề 103"},
+    "74": {"level": 1, "title": "Đề 104"},
+    "80": {"level": 2, "title": "Giải Đề 104"}
   }

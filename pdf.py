@@ -44,10 +44,14 @@ def select_files_and_add_bookmarks():
         print("Không có file PDF nào được chọn. Đang hủy...")
         return
 
-    # Chọn nơi lưu file đầu ra
+    # Tạo tên mặc định cho file đầu ra
+    default_name = os.path.basename(input_file)
+    
+    # Chọn nơi lưu file đầu ra với tên mặc định
     output_file = filedialog.asksaveasfilename(
         title="Lưu file PDF đầu ra",
         defaultextension=".pdf",
+        initialfile=default_name,
         filetypes=[("PDF Files", "*.pdf")]
     )
     if not output_file:
@@ -55,7 +59,7 @@ def select_files_and_add_bookmarks():
         return
 
     add_bookmarks(input_file, output_file, bookmarks)
-    print(f"Đã thêm bookmarks thành công và lưu vào: {output_file}")
+    print(f"✅ Đã thêm bookmarks và lưu vào: {output_file}")
 
 # Gọi hàm chính
 if __name__ == "__main__":
