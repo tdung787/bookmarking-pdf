@@ -22,7 +22,6 @@ def select_files_and_add_bookmarks():
     root = tk.Tk()
     root.withdraw()
 
-    # Luôn dùng file 'data.json' trong cùng thư mục
     json_file = "data.json"
     if not os.path.exists(json_file):
         print("Không tìm thấy file 'data.json' trong thư mục hiện tại.")
@@ -35,7 +34,6 @@ def select_files_and_add_bookmarks():
         print(f"Lỗi khi đọc 'data.json': {e}")
         return
 
-    # Chọn file PDF đầu vào
     input_file = filedialog.askopenfilename(
         title="Chọn file PDF đầu vào",
         filetypes=[("PDF Files", "*.pdf")]
@@ -44,10 +42,23 @@ def select_files_and_add_bookmarks():
         print("Không có file PDF nào được chọn. Đang hủy...")
         return
 
-    # Tạo tên mặc định cho file đầu ra
     default_name = os.path.basename(input_file)
-    
-    # Chọn nơi lưu file đầu ra với tên mặc định
+
+    # Tạo thư mục json_backup nếu chưa có
+    backup_dir = "json_backup"
+    os.makedirs(backup_dir, exist_ok=True)
+
+    # Lưu bản sao data.json vào json_backup với tên file PDF
+    pdf_name_without_ext = os.path.splitext(default_name)[0]
+    backup_json_path = os.path.join(backup_dir, f"{pdf_name_without_ext}.json")
+    try:
+        with open(backup_json_path, 'w', encoding='utf-8') as f:
+            json.dump(bookmarks, f, ensure_ascii=False, indent=4)
+        print(f"✅ Đã lưu bản sao data.json vào: {backup_json_path}")
+    except Exception as e:
+        print(f"❌ Lỗi khi lưu bản sao: {e}")
+        return
+
     output_file = filedialog.asksaveasfilename(
         title="Lưu file PDF đầu ra",
         defaultextension=".pdf",
