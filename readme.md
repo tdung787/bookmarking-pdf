@@ -1,6 +1,3 @@
-## Hướng dẫn sử dụng
-
-```
 ### Cài đặt các thư viện
 ```python
 pip install pymupdf
