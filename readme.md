@@ -2,6 +2,8 @@
 ```python
 pip install pymupdf
 ```
+### -> Sửa file data.json theo trang bookmarks
+
 ### Chạy ứng dụng
 ```python
 python pdf.py
